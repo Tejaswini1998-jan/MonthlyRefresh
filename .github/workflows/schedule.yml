@@ -8,4 +8,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "✅ This job ran at $(date)"
+      - run: echo "✅ This SCHEDULED job ran at $(date)"
