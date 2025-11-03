@@ -1,23 +1,11 @@
-name: Scheduled workflow
+name: Test every 5 mins
 
-# Trigger section
 on:
   schedule:
-    # Runs every 5 minutes
     - cron: "*/5 * * * *"
-  # Optional: allow manual trigger too
-  workflow_dispatch:
-    inputs:
-      name:
-        description: "Person to greet"
-        default: "World"
-        required: true
-        type: string
 
 jobs:
-  greet:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Send greeting
-        run: echo "Hello ${{ inputs.name || 'World' }}"
+      - run: echo "✅ This job ran at $(date)"
